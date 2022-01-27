@@ -34,9 +34,9 @@ EOF
 ## creating docker network ##
 docker network create vrau || true 
 
-docker run --name nginx-backend -p 8088:80 -d --net=vrau  nginx:1.15.0-alpine && sleep 15
-docker run -d -v /etc/haproxy:/usr/local/etc/haproxy:ro -p 81:81 --net=vrau --name web-gateway haproxy:1.6
-echo "testing" 
-sleep 15 && curl -IL http://localhost:81 
+docker run --name nginx-backend -p 8088:80 -d --net=vrau  nginx:1.15.0-alpine && sleep 15;
+docker run -d -v /etc/haproxy:/usr/local/etc/haproxy:ro -p 81:81 --net=vrau --name web-gateway haproxy:1.6;
+echo "testing" ;
+sleep 15 && curl -IL http://localhost:81 ;
 echo "Finished" 
 
